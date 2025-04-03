@@ -7,8 +7,7 @@ Web Gamepads is a solution for couch co-op gaming without everyone needing a phy
 
 Provided as is and with no guarantees, this was a simple side project to solve a problem that I've seen time and time again when friends get together but are limited in game choices as they have a keyboard and maybe one controller but don't have enough controllers for a couch game like "Overcooked", "Gang Beasts" or "Ultimate Chicken Horse".
 
-[Demo Video](https://github.com/user-attachments/assets/d0d00a3c-5876-40ee-88d3-54dd0b477653)
-
+[Demo Video](https://github.com/user-attachments/assets/ff383683-ee92-4c06-9740-3bfba4b9f6dd)
 
 ## Installation
 
