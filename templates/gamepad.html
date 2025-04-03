@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="/static/css/stylesheet.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,height=device-height">
+  <link rel="icon" type="image/x-icon" href="/static/icon.svg">
+  <title>Web Gamepad</title>
+  <script src="/static/js/lib/socket.io.min.js"></script>
+  <script src="/static/js/SocketConnection.js"></script>
+  <script src="/static/js/GamepadInput.js" defer></script>
+  <script src="/static/js/Layout.js" defer></script>
+</head>
+
+<body>
+  <div class="coverBox" id="background"></div>
+  <div class="coverBox column" id="mainController">
+    <div class="row" id="Triggers">
+      <button class="controllerButton displayButton" id="LT"></button>
+      <button class="controllerButton displayButton" id="RT"></button>
+    </div>
+    <div class="row" id="Bumpers">
+      <button class="controllerButton displayButton" id="LB"></button>
+      <button class="controllerButton displayButton" id="RB"></button>
+    </div>
+
+    <div class="row" id="Joycons">
+      <div class="column joystickColumn" id="LeftJoystickColumn">
+        <div class="aspect-container" id="LeftJoystick">
+          <div class="joystick-visual-container" id="joystickContainer">
+            <div class="joystick-container">
+              <div class="joystick" id="Left"></div>
+            </div>
+          </div>
+        </div>
+        <div style="--m: 4" class="ButtonsGridContainer" id="DPAD">
+          <button style="--n: 0" class="button-grid controllerButton displayButton" id=DPAD_RIGHT></button>
+          <button style="--n: 1" class="button-grid controllerButton displayButton" id=DPAD_DOWN></button>
+          <button style="--n: 2" class="button-grid controllerButton displayButton" id=DPAD_LEFT></button>
+          <button style="--n: 3" class="button-grid controllerButton displayButton" id=DPAD_UP></button>
+        </div>
+      </div>
+
+      <div class="column joystickColumn" id="MenuColumn">
+        <div class="row" id="Menus">
+          <button class="controllerButton displayButton" id="View"></button>
+          <button class="controllerButton displayButton" id="Menu"></button>
+        </div>
+        <button class="displayButton" id="fullscreenButton" onclick="openFullscreen()">Enlarge</button>
+        <select class="displayButton" name="controller" id="controllersList">
+        </select>
+        <button class="displayButton" id="closeSettings"
+          onclick="setElementHidden('settingsOverlay', true)">Settings</button>
+
+        <img id="DisconnectedImg" src="/static/images/disconnected.png" alt="disconnected">
+      </div>
+      <div class="column joystickColumn" id="RightJoystickColumn">
+        <div class="aspect-container" id="RightJoystick">
+          <div class="joystick-visual-container" id="joystickContainer">
+            <div class="joystick-container">
+              <div class="joystick" id="Right"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="--m: 4" class="ButtonsGridContainer" id="Buttons">
+          <button style="--n: 0" class="controllerButton displayButton" id="B"></button>
+          <button style="--n: 1" class="controllerButton displayButton" id="A"></button>
+          <button style="--n: 2" class="controllerButton displayButton" id="X"></button>
+          <button style="--n: 3" class="controllerButton displayButton" id="Y"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="coverBox" id="settingsOverlay">
+    <div class="column" id="settingsContainer">
+      <button class="settingsListItem displayButton" id="closeSettings"
+        onclick="setElementHidden('settingsOverlay', false)">Close Settings</button>
+      <br>
+      <div class="settingsListItem defaultContainer" id="settingsBox">
+        <button class="displayButton" onclick="addController()" id="addControllerButton" disabled>Add
+          Controller</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
